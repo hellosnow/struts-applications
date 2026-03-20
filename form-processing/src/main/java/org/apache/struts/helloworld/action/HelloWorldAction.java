@@ -1,74 +1,40 @@
 package org.apache.struts.helloworld.action;
 
 import org.apache.struts.helloworld.model.MessageStore;
-import org.apache.struts2.ActionSupport;
-import org.apache.struts2.interceptor.parameter.StrutsParameter;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Acts as a Struts 2 controller that responds
- * to a user action by setting the value
- * of the Message model class, and returns a String
- * result.
- * @author Bruce Phillips
- *
+ * Spring MVC controller that responds to a user action by setting the value
+ * of the Message model class and returns a view name.
  */
-public class HelloWorldAction extends ActionSupport {
+@Controller
+@RequestMapping("/test")
+public class HelloWorldAction {
 
-    private static final long serialVersionUID = 1L;
+    private static final AtomicInteger helloCount = new AtomicInteger(0);
 
-    /**
-     * The model class that stores the message
-     * to display in the view.
-     */
-    private MessageStore messageStore;
-
-    private static int helloCount = 0;
-
-    public int getHelloCount() {
-        return helloCount;
+    @GetMapping({"/index", ""})
+    public String index() {
+        return "index";
     }
 
-    public void setHelloCount(int helloCount) {
-        HelloWorldAction.helloCount = helloCount;
-    }
+    @GetMapping("/hello")
+    public String hello(@RequestParam(required = false) String userName, Model model) {
+        MessageStore messageStore = new MessageStore();
 
-    private String userName;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    @StrutsParameter
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    /*
-     * Creates the MessageStore model object,
-     * increase helloCount by 1 and
-     * returns success.  The MessageStore model
-     * object will be available to the view.
-     */
-    public String execute() throws Exception {
-        messageStore = new MessageStore() ;
-
-        //Action included a query string parameter of userName
-        //or a form field with name of userName
         if (userName != null) {
-            messageStore.setMessage( messageStore.getMessage() + " " + userName);
+            messageStore.setMessage(messageStore.getMessage() + " " + userName);
         }
 
-        helloCount++;
-
-        return SUCCESS;
+        model.addAttribute("messageStore", messageStore);
+        model.addAttribute("helloCount", helloCount.incrementAndGet());
+        return "HelloWorld";
     }
-
-    public MessageStore getMessageStore() {
-        return messageStore;
-    }
-
-    public void setMessageStore(MessageStore messageStore) {
-        this.messageStore = messageStore;
-    }
-
 }
+

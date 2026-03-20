@@ -11,9 +11,29 @@
 
     <artifactId>form-processing</artifactId>
     <name>Form Processing</name>
-    <description>Form processing example application for the Struts 2 getting started tutorials</description>
+    <description>Form processing example application migrated from Struts 2 to Spring MVC</description>
 
     <packaging>war</packaging>
+
+    <properties>
+        <spring.version>6.1.14</spring.version>
+    </properties>
+
+    <dependencies>
+        <!-- Override parent struts2-core dependency: not needed for Spring MVC -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Spring MVC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>form-processing</finalName>
