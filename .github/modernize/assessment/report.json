@@ -1,0 +1,382 @@
+{
+  "assessmentTool": "AppCAT",
+  "assessmentToolVersion": "7.x",
+  "timestamp": "2026-03-20T09:48:21Z",
+  "workspacePath": "/home/runner/work/struts-applications/struts-applications",
+  "applications": [
+    {
+      "name": "struts-examples",
+      "path": "/home/runner/work/struts-applications/struts-applications",
+      "description": "Apache Struts 2 multi-module Maven project containing 44 web application examples demonstrating various Struts 2 framework features.",
+      "javaVersion": "17",
+      "buildTool": "Maven",
+      "packaging": "WAR (multi-module)",
+      "modules": [
+        "action-chaining", "annotations", "basic-struts", "bean-validation", "blank",
+        "coding-actions", "control-tags", "crud", "debugging-struts", "dynamic-href",
+        "exception-handling", "exclude-parameters", "expression-cache", "file-upload",
+        "form-processing", "form-tags", "form-validation", "form-xml-validation",
+        "helloworld", "http-session", "interceptors", "jasperreports", "jfreechart",
+        "json", "json-customize", "mailreader2", "message-resource", "message-store",
+        "preparable-interface", "quarkus", "rest-angular", "restful2actionmapper",
+        "shiro-basic", "sitemesh3", "spring-struts", "text-provider", "themes",
+        "themes-override", "tiles", "type-conversion", "unit-testing", "unknown-handler",
+        "using-tags", "validation-messages", "wildcard-method-selection", "wildcard-regex"
+      ],
+      "statistics": {
+        "totalModules": 44,
+        "totalJavaFiles": 194,
+        "totalJspFiles": 142
+      },
+      "technologies": [
+        {
+          "name": "Apache Struts 2",
+          "version": "7.0.3",
+          "function": "Web MVC Framework"
+        },
+        {
+          "name": "Jakarta Servlet API",
+          "version": "6.1.0",
+          "function": "Servlet Container API (Jakarta EE 10)"
+        },
+        {
+          "name": "Apache Log4j 2",
+          "version": "2.25.1",
+          "function": "Logging Framework"
+        },
+        {
+          "name": "Jackson",
+          "version": "2.14.1",
+          "function": "JSON/XML Serialization"
+        },
+        {
+          "name": "Hibernate Validator",
+          "version": "8.0.1.Final",
+          "function": "Jakarta Bean Validation Implementation"
+        },
+        {
+          "name": "Spring Framework",
+          "version": "6.2.12",
+          "function": "Dependency Injection (spring-struts module)"
+        },
+        {
+          "name": "Apache Shiro",
+          "version": "2.0.5",
+          "function": "Authentication and Authorization (shiro-basic module)"
+        },
+        {
+          "name": "Apache Tiles",
+          "version": "2.x",
+          "function": "JSP Template Composition (tiles module)"
+        },
+        {
+          "name": "SiteMesh",
+          "version": "3.2.1",
+          "function": "Page Decoration Framework (sitemesh3 module)"
+        },
+        {
+          "name": "JasperReports",
+          "version": "6.21.4",
+          "function": "Report Generation (jasperreports module)"
+        },
+        {
+          "name": "JFreeChart",
+          "version": "1.5.6",
+          "function": "Chart Generation (jfreechart module)"
+        },
+        {
+          "name": "Eclipse Jetty",
+          "version": "11.0.18",
+          "function": "Embedded Servlet Container (development)"
+        },
+        {
+          "name": "Quarkus",
+          "version": "3.28.1",
+          "function": "Cloud-Native Runtime (quarkus module)"
+        },
+        {
+          "name": "AngularJS",
+          "version": "1.x",
+          "function": "Client-Side SPA Framework (rest-angular module)"
+        },
+        {
+          "name": "Commons Digester",
+          "version": "3.x",
+          "function": "XML Parsing (mailreader2 module)"
+        },
+        {
+          "name": "JavaServer Pages (JSP)",
+          "version": "4.0",
+          "function": "Server-Side View Technology"
+        }
+      ],
+      "dependencies": [
+        {
+          "groupId": "org.apache.struts",
+          "artifactId": "struts2-core",
+          "version": "7.0.3"
+        },
+        {
+          "groupId": "org.apache.logging.log4j",
+          "artifactId": "log4j-core",
+          "version": "2.25.1"
+        },
+        {
+          "groupId": "com.fasterxml.jackson.core",
+          "artifactId": "jackson-databind",
+          "version": "2.14.1"
+        },
+        {
+          "groupId": "org.hibernate.validator",
+          "artifactId": "hibernate-validator",
+          "version": "8.0.1.Final"
+        },
+        {
+          "groupId": "org.springframework",
+          "artifactId": "spring-webmvc",
+          "version": "6.2.12"
+        },
+        {
+          "groupId": "org.apache.shiro",
+          "artifactId": "shiro-web",
+          "version": "2.0.5"
+        },
+        {
+          "groupId": "net.sf.jasperreports",
+          "artifactId": "jasperreports",
+          "version": "6.21.4"
+        },
+        {
+          "groupId": "org.jfree",
+          "artifactId": "jfreechart",
+          "version": "1.5.6"
+        },
+        {
+          "groupId": "jakarta.servlet",
+          "artifactId": "jakarta.servlet-api",
+          "version": "6.1.0"
+        },
+        {
+          "groupId": "jakarta.validation",
+          "artifactId": "jakarta.validation-api",
+          "version": "3.0.2"
+        }
+      ],
+      "issues": [
+        {
+          "id": "CLOUD-001",
+          "title": "Legacy Web MVC Framework (Apache Struts 2)",
+          "description": "The application uses Apache Struts 2 as its web MVC framework. While functional, Struts 2 is a legacy framework not natively supported on modern cloud platforms like Azure App Service. Migration to Spring Boot or Quarkus would provide better cloud-native support, containerization, health checks, and Azure integration.",
+          "criticality": "Potential",
+          "domain": "Cloud Readiness",
+          "effort": "High",
+          "files": [
+            { "filePath": "pom.xml", "lineNumbers": [49] }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/app-service/configure-language-java"
+          ]
+        },
+        {
+          "id": "CLOUD-002",
+          "title": "Stateful HTTP Session Usage",
+          "description": "Multiple modules use stateful HTTP sessions (javax.servlet.http.HttpSession) for storing user state. This creates horizontal scaling challenges in cloud environments. Azure App Service and container-based deployments require session externalization (e.g., Redis Cache) or stateless architecture for proper load balancing.",
+          "criticality": "Mandatory",
+          "domain": "Cloud Readiness",
+          "effort": "Medium",
+          "files": [
+            { "filePath": "http-session/src/main/java/org/apache/struts/helloworld/action/HelloWorldAction.java" },
+            { "filePath": "mailreader2/src/main/java/org/apache/struts/examples/mailreader2/MailreaderSupport.java" },
+            { "filePath": "shiro-basic/src/main/java/org/apache/struts2/shiro/example/action/LoginAction.java" }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-java-get-started"
+          ]
+        },
+        {
+          "id": "CLOUD-003",
+          "title": "WAR Packaging - Traditional Servlet Container Deployment",
+          "description": "All 44 modules are packaged as WAR files and require a traditional Java Servlet container (Tomcat, Jetty, GlassFish). For cloud deployment, containerization (Docker) or using Azure App Service Java WAR deployment is needed. Consider migrating to embedded server packaging (JAR with embedded Tomcat) for better cloud-native support.",
+          "criticality": "Mandatory",
+          "domain": "Containerization",
+          "effort": "Medium",
+          "files": [
+            { "filePath": "pom.xml", "lineNumbers": [249] }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/app-service/quickstart-java"
+          ]
+        },
+        {
+          "id": "CLOUD-004",
+          "title": "In-Memory Data Store (No Persistent Storage)",
+          "description": "All data access modules (crud, mailreader2, rest-angular, spring-struts) use in-memory collections (ArrayList, HashMap) as data stores. Data is lost on application restart, which is incompatible with cloud deployments that involve multiple instances, rolling updates, or restarts. Migration to a cloud database (Azure SQL, Azure Cosmos DB, Azure Database for MySQL/PostgreSQL) is required.",
+          "criticality": "Mandatory",
+          "domain": "Data Access",
+          "effort": "High",
+          "files": [
+            { "filePath": "crud/src/main/java/org/apache/struts/examples/dataaccess/MemoryPersonDao.java" },
+            { "filePath": "mailreader2/src/main/java/org/apache/struts/examples/mailreader2/dao/impl/memory/MemoryUserDatabase.java" },
+            { "filePath": "rest-angular/src/main/java/org/apache/struts/examples/rest/services/OrdersService.java" }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/azure-sql/database/"
+          ]
+        },
+        {
+          "id": "CLOUD-005",
+          "title": "Local File System Usage",
+          "description": "Several modules write to or read from the local file system (file-upload, jasperreports, sitemesh3, mailreader2). Cloud environments with ephemeral storage or read-only file systems (like container deployments) require migration to cloud storage solutions such as Azure Blob Storage.",
+          "criticality": "Mandatory",
+          "domain": "File Storage",
+          "effort": "Medium",
+          "files": [
+            { "filePath": "file-upload/src/main/java/org/apache/struts/example/UploadAction.java" },
+            { "filePath": "jasperreports/src/main/java/org/apache/struts/example/jasperreports/service/JasperInitializer.java" },
+            { "filePath": "sitemesh3/src/main/java/org/apache/struts/examples/sitemesh3/UploadAction.java" }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-java"
+          ]
+        },
+        {
+          "id": "CLOUD-006",
+          "title": "No Health Check or Readiness Endpoints",
+          "description": "None of the application modules expose health check or readiness probe endpoints (e.g., /health, /actuator/health). Cloud platforms (Azure App Service, Azure Kubernetes Service, Azure Container Apps) rely on these endpoints for load balancing, auto-scaling, and zero-downtime deployments.",
+          "criticality": "Mandatory",
+          "domain": "Cloud Readiness",
+          "effort": "Low",
+          "files": [],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/app-service/monitor-instances-health-check"
+          ]
+        },
+        {
+          "id": "CLOUD-007",
+          "title": "Hardcoded Security Credentials (Apache Shiro INI)",
+          "description": "The shiro-basic module uses a Shiro INI configuration file with hardcoded usernames and passwords (root/secret, guest/guest, etc.). Cloud deployments require externalized secret management using services like Azure Key Vault. Additionally, Apache Shiro should be replaced with or complemented by Microsoft Entra ID (Azure AD) for enterprise authentication.",
+          "criticality": "Mandatory",
+          "domain": "Security",
+          "effort": "Medium",
+          "files": [
+            { "filePath": "shiro-basic/src/main/resources/shiro.ini" }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/key-vault/secrets/quick-create-java",
+            "https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-web-app-java-sign-in"
+          ]
+        },
+        {
+          "id": "CLOUD-008",
+          "title": "JSP-Based Server-Side Rendering (142 JSP Files)",
+          "description": "The application uses 142 JSP files for server-side rendering with Struts tags. JSP is a legacy view technology that does not align with modern cloud-native architectures (microservices, SPA + API). While JSP works in cloud environments, consider migrating to Thymeleaf, FreeMarker, or a REST API with a modern frontend framework for better maintainability and cloud scalability.",
+          "criticality": "Optional",
+          "domain": "Modernization",
+          "effort": "High",
+          "files": [],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/spring-apps/enterprise/how-to-enterprise-deploy-polyglot-apps"
+          ]
+        },
+        {
+          "id": "CLOUD-009",
+          "title": "No Externalized Configuration",
+          "description": "Application configuration is bundled in XML files (struts.xml, log4j2.xml, web.xml) deployed with the application. Cloud-native applications should externalize configuration using environment variables or a configuration service (Azure App Configuration) to support multiple deployment environments without rebuilding.",
+          "criticality": "Potential",
+          "domain": "Configuration Management",
+          "effort": "Medium",
+          "files": [],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/azure-app-configuration/quickstart-java-spring-app"
+          ]
+        },
+        {
+          "id": "CLOUD-010",
+          "title": "Report Generation with Local JasperReports",
+          "description": "The jasperreports module generates PDF/Excel/HTML reports using JasperReports with local compiled report templates (.jasper files). Cloud deployments should use cloud-based document generation services or Azure Functions for report generation, and store outputs in Azure Blob Storage.",
+          "criticality": "Potential",
+          "domain": "Modernization",
+          "effort": "Medium",
+          "files": [
+            { "filePath": "jasperreports/src/main/java/org/apache/struts/example/jasperreports/service/JasperInitializer.java" }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-java"
+          ]
+        },
+        {
+          "id": "CLOUD-011",
+          "title": "Quarkus Module - Cloud-Native Opportunity",
+          "description": "The quarkus module demonstrates use of Quarkus framework which supports native image compilation for containerized, cloud-native workloads. This is a positive signal indicating awareness of modern cloud patterns. Consider expanding Quarkus adoption across other modules or migrating to Spring Boot for better Azure integration.",
+          "criticality": "Optional",
+          "domain": "Cloud Readiness",
+          "effort": "High",
+          "files": [
+            { "filePath": "quarkus/pom.xml" }
+          ],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/container-apps/java-quarkus-introduction"
+          ]
+        },
+        {
+          "id": "CLOUD-012",
+          "title": "No Observability / Distributed Tracing",
+          "description": "The application uses Log4j2 for basic logging but has no distributed tracing, metrics collection, or integration with Application Performance Monitoring (APM) tools. For cloud deployments, integrate Azure Monitor Application Insights for end-to-end observability, performance monitoring, and alerting.",
+          "criticality": "Potential",
+          "domain": "Observability",
+          "effort": "Low",
+          "files": [],
+          "references": [
+            "https://learn.microsoft.com/en-us/azure/azure-monitor/app/java-standalone-agent"
+          ]
+        }
+      ],
+      "insights": [
+        {
+          "type": "FrameworkInsight",
+          "description": "Apache Struts 2 is a mature, feature-rich framework but lacks native cloud-integration features. Azure App Service supports WAR deployment for Java web applications, making direct deployment feasible as a first step."
+        },
+        {
+          "type": "ArchitectureInsight",
+          "description": "The multi-module structure (44 modules) presents both a challenge and opportunity for modernization. Each module could be independently containerized and deployed as a microservice or Azure Container App."
+        },
+        {
+          "type": "SecurityInsight",
+          "description": "The Apache Shiro security module uses INI-based realm with hardcoded credentials. Production deployments must replace this with Azure Active Directory (Entra ID) integration or a proper credential management solution."
+        },
+        {
+          "type": "DataInsight",
+          "description": "All data persistence is in-memory. A migration to Azure SQL Database or Azure Cosmos DB would be required for production cloud deployment, with JPA/Hibernate as the recommended data access layer."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalApplications": 1,
+    "totalModules": 44,
+    "totalJavaFiles": 194,
+    "totalJspFiles": 142,
+    "issuesSummary": {
+      "mandatory": 6,
+      "potential": 4,
+      "optional": 2
+    },
+    "effortSummary": {
+      "high": 4,
+      "medium": 5,
+      "low": 3
+    },
+    "cloudReadinessScore": "Low",
+    "recommendations": [
+      "Prioritize containerization: package each module as a Docker container for deployment on Azure App Service or Azure Container Apps.",
+      "Externalize session state to Azure Cache for Redis to enable horizontal scaling.",
+      "Replace in-memory data stores with Azure SQL Database or Azure Cosmos DB.",
+      "Migrate file upload and report storage to Azure Blob Storage.",
+      "Add health check endpoints (/health) to each module.",
+      "Replace Shiro INI credentials with Azure Key Vault secrets and Azure Active Directory authentication.",
+      "Integrate Azure Monitor Application Insights for observability.",
+      "Consider migrating from Apache Struts 2 to Spring Boot or Quarkus for better cloud-native tooling and Azure SDK support.",
+      "Externalize application configuration using Azure App Configuration or environment variables."
+    ]
+  }
+}
