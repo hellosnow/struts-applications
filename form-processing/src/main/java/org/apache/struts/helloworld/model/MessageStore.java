@@ -10,7 +10,7 @@ public class MessageStore {
     private String message;
     
     public MessageStore() {
-        setMessage("Hello Struts User");
+        setMessage("Hello Spring User");
     }
 
     public String getMessage() {
